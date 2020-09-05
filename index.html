@@ -88,6 +88,7 @@ $(function() {
     dataType: 'jsonp'
   }).done((data) => {
     $("h1").text(data.port.port_name);
+    $('#port_photo_path').attr('src', data.port.port_photo_path);
     data.bikes.forEach(function(bike) {
       $("#row").append([' <div class="col-md-4">',
         ' <div class="card mb-4 box-shadow"> ',
