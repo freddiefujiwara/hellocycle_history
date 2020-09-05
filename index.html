@@ -84,7 +84,7 @@
 $(function() {
   $.ajax({
     type: 'GET',
-    url: 'https://script.google.com/macros/s/AKfycbwetE7pJEr-3RJp-nZv1G7s8cqI8BjVtBK0fuyKA7MzldqKCZyo/exec?id=3023',
+    url: 'https://script.google.com/macros/s/AKfycbwetE7pJEr-3RJp-nZv1G7s8cqI8BjVtBK0fuyKA7MzldqKCZyo/exec?id=' + $(location).attr('id');,
     dataType: 'jsonp'
   }).done((data) => {
     $("h1").text(data.port.port_name);
