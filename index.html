@@ -84,7 +84,7 @@
 $(function() {
   $.ajax({
     type: 'GET',
-    url: 'https://script.google.com/macros/s/AKfycbwetE7pJEr-3RJp-nZv1G7s8cqI8BjVtBK0fuyKA7MzldqKCZyo/exec?id=' + $(location).attr('id');,
+    url: 'https://script.google.com/macros/s/AKfycbwetE7pJEr-3RJp-nZv1G7s8cqI8BjVtBK0fuyKA7MzldqKCZyo/exec?id=' + getParam('id');,
     dataType: 'jsonp'
   }).done((data) => {
     $("h1").text(data.port.port_name);
@@ -112,6 +112,16 @@ $(function() {
     });
   });
 });
+
+function getParam(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
       </script>
    </body>
 </html>
