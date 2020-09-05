@@ -52,6 +52,9 @@
             <div class="container">
                <h1 class="jumbotron-heading">Port Name</h1>
                <img  class="card-img-top" src="#" id="port_photo_path" />
+               <p>
+                 <a href="#" class="btn btn-secondary my-2" id="book" target="_blank">Book</a>
+               </p>
             </div>
          </section>
          <div class="album py-5 bg-light">
@@ -89,6 +92,7 @@ $(function() {
   }).done((data) => {
     $("h1").text(data.port.port_name);
     $('#port_photo_path').attr('src', data.port.port_photo_path);
+    $('#book').attr('href', 'https://www.hellocycling.jp/app/port/detail/'+data.port.id);
     data.bikes.forEach(function(bike) {
       $("#row").append([' <div class="col-md-4">',
         ' <div class="card mb-4 box-shadow"> ',
