@@ -126,6 +126,7 @@ $(function() {
         const target = $(this).find('.card-text');
         $(this).toggle(target.text().toLowerCase().indexOf(value) > -1)
       });
+      history.relpaceState(null,null,"/hellocycling-history/index.html?q="+encodeURIComponent(value));
     }).prop("disabled",false);
   });
 });
