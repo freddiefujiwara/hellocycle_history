@@ -118,7 +118,7 @@ $(function() {
           const target = $(this).find('.card-text');
           $(this).toggle(target.text().toLowerCase().indexOf(value) > -1)
         });        
-        $("#filter").value(value);
+        $("#filter").val(value);
       }, 1000);
     }
     $("#filter").on("keyup", function() {
