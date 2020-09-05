@@ -93,7 +93,7 @@ $(function() {
     $("h1").text(data.bike.code);
     $('#port_photo_path').attr('src', data.bike.icon_path);
     $('#history_map').attr('href', data.history_map);
-    data.history.forEach(function(port) {
+    data.history.reverse().forEach(function(port) {
       $("#row").append([' <div class="col-md-4">',
         ' <div class="card mb-4 box-shadow"> ',
         '<img class="card-img-top" src="', port.port_photo_path, '" alt="Card image cap"> ',
