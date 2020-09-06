@@ -119,9 +119,10 @@ $(function() {
       });
       return;
     }
-    if (window.confirm("Error")) {
+    setTimeout(function() => {
+      $("h1").text(data.status);
       window.location.href = "./";
-    }
+    }, 500);
   });
 });
 
