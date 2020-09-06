@@ -91,23 +91,25 @@ $(function() {
     $('#port_photo_path').attr('src', 'https://appliv-domestic.akamaized.net/v1/175x175/r/icon/004801842/8411528d2b1f5e6d453eec22750f6501.png');
     data.ports.forEach(function(port) {
       $("#row").append([' <div class="col-md-4">',
-        ' <div class="card mb-4 box-shadow"> ',
-        '<img class="card-img-top" src="', port.port_icon_path, '" alt="Card image cap"> ',
-        ' <div class="card-body"> ',
-        ' <p class="card-text">', port.port_name, '</p> ',
+        '<div class="card mb-4 box-shadow">',
+        '<img class="card-img-top" src="', port.port_icon_path, '" alt="Card image cap">',
+        '<div class="card-body">',
+        '<p class="card-text">', port.port_name, '</p> ',
         '<div class="d-flex justify-content-between align-items-center"> ',
-        ' <div class="btn-group"> ',
+        '<div class="btn-group"> ',
         '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="javascript:location.href=',
         "'port.html?id=",
         port.id,
+        "&port_name=",
+        encodeURIComponent(port.port_name),
         "'",
-        '">View</button> ',
-        '   </div> ',
+        '">View</button>',
+        '</div>',
         '<small class="text-muted">', port.port, '</small> ',
-        ' </div> ',
-        ' </div> ',
-        ' </div> ',
-        ' </div>'
+        '</div>',
+        '</div>',
+        '</div>',
+        '</div>'
       ].join(""));
     });
     const q = getParam('q');
