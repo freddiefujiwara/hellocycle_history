@@ -89,7 +89,7 @@
       <script type="text/javascript">
 $(function() {
   const port_name = decodeURIComponent(getParam('port_name'));
-  if(port_name){
+  if (port_name) {
     $("h1").text(port_name);
   }
   $.ajax({
@@ -99,7 +99,7 @@ $(function() {
   }).done((data) => {
     $("h1").text(data.port.port_name);
     $('#port_photo_path').attr('src', data.port.port_photo_path);
-    $('#book').attr('href', 'https://www.hellocycling.jp/app/port/detail/'+data.port.id);
+    $('#book').attr('href', 'https://www.hellocycling.jp/app/port/detail/' + data.port.id);
     data.bikes.forEach(function(bike) {
       $("#row").append([' <div class="col-md-4">',
         ' <div class="card mb-4 box-shadow"> ',
@@ -114,13 +114,14 @@ $(function() {
         "'",
         '">View</button> ',
         '   </div> ',
-        '<small class="text-muted">',bike.category,'</small> ',
+        '<small class="text-muted">', bike.category, '</small> ',
         ' </div> ',
         ' </div> ',
         ' </div> ',
         ' </div>'
       ].join(""));
-      
+    });
+
     data.related_bikes.forEach(function(bike) {
       $("#related_row").append([' <div class="col-md-4">',
         ' <div class="card mb-4 box-shadow"> ',
@@ -135,7 +136,7 @@ $(function() {
         "'",
         '">View</button> ',
         '   </div> ',
-        '<small class="text-muted">',bike.category,'</small> ',
+        '<small class="text-muted">', bike.category, '</small> ',
         ' </div> ',
         ' </div> ',
         ' </div> ',
