@@ -146,8 +146,8 @@ $(function() {
       });
       return;
     }
+    $("h1").text(data.status);
     setTimeout(function() {
-      $("h1").text(data.status);
       window.location.href = "./";
     }, 500);
   });
