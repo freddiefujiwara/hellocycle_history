@@ -120,6 +120,27 @@ $(function() {
         ' </div> ',
         ' </div>'
       ].join(""));
+      
+    data.related_bikes.forEach(function(bike) {
+      $("#related_row").append([' <div class="col-md-4">',
+        ' <div class="card mb-4 box-shadow"> ',
+        '<img class="card-img-top" src="', bike.icon_path, '" alt="Card image cap"> ',
+        ' <div class="card-body"> ',
+        ' <p class="card-text">', bike.code, '</p> ',
+        '<div class="d-flex justify-content-between align-items-center"> ',
+        ' <div class="btn-group"> ',
+        '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="javascript:location.href=',
+        "'bike.html?code=",
+        bike.code,
+        "'",
+        '">View</button> ',
+        '   </div> ',
+        '<small class="text-muted">',bike.category,'</small> ',
+        ' </div> ',
+        ' </div> ',
+        ' </div> ',
+        ' </div>'
+      ].join(""));
     });
   });
 });
