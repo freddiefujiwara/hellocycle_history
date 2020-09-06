@@ -89,7 +89,7 @@ $(function() {
   }).done((data) => {
 
     $('#port_photo_path').attr('src', 'https://appliv-domestic.akamaized.net/v1/175x175/r/icon/004801842/8411528d2b1f5e6d453eec22750f6501.png');
-    data.ports.forEach(function(port) {
+    data.ports.reverse().forEach(function(port) {
       $("#row").append([' <div class="col-md-4">',
         '<div class="card mb-4 box-shadow">',
         '<img class="card-img-top" src="', port.port_icon_path, '" alt="Card image cap">',
