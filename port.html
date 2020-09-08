@@ -123,7 +123,7 @@ $(function() {
         ].join(""));
       });
 
-      data.related_bikes.forEach(function(bike) {
+      data.related_bikes.reverse().forEach(function(bike) {
         $("#related_row").append([' <div class="col-md-4">',
           ' <div class="card mb-4 box-shadow"> ',
           '<img class="card-img-top" src="', bike.icon_path, '" alt="Card image cap"> ',
